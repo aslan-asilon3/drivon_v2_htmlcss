@@ -1,13 +1,13 @@
-# 🚘 Responsive Car website
-## [Watch it on youtube](https://youtu.be/bDngcOQ8Img)
-### 🚘 Responsive Car website
+# 🚘 Drivon v2
 
-- Responsive Car website Using HTML CSS & JavaScript
-- Contains animations when scrolling.
-- Smooth scrolling in each section.
-- Developed first with the Mobile First methodology, then for desktop.
-- Compatible with all mobile devices and with a beautiful and pleasant user interface.
 
-💙 Join the channel to see more videos like this. [Bedimcode](https://www.youtube.com/c/Bedimcode)
 
-![preview img](/preview.png)
+![landing](https://github.com/aslan-asilon3/drivon_v2_htmlcss/assets/75960970/53561216-1a8b-4054-9cb5-6c2f20fefff0)
+
+![about](https://github.com/aslan-asilon3/drivon_v2_htmlcss/assets/75960970/2b9c5416-dc26-4af7-b808-746f7e2911ac)
+
+![popular](https://github.com/aslan-asilon3/drivon_v2_htmlcss/assets/75960970/c809ced5-b2e9-4b89-994b-87b2db65e61d)
+
+![features](https://github.com/aslan-asilon3/drivon_v2_htmlcss/assets/75960970/843eff0d-b7a6-40b7-aa65-cc06e9f0aa87)
+
+![features1](https://github.com/aslan-asilon3/drivon_v2_htmlcss/assets/75960970/e0040b9f-cd32-4e6a-b9a8-7cbd9a1758da)
