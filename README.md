@@ -2,7 +2,7 @@
 
 
 
-![landing](https://github.com/aslan-asilon3/drivon_v2_htmlcss/assets/75960970/53561216-1a8b-4054-9cb5-6c2f20fefff0)
+![drivon-landingpage](https://github.com/aslan-asilon3/drivon_v2_htmlcss/assets/75960970/8c88b323-7bf6-49c0-a1ab-cf38bb20f4ad)
 
 ![about](https://github.com/aslan-asilon3/drivon_v2_htmlcss/assets/75960970/2b9c5416-dc26-4af7-b808-746f7e2911ac)
 
