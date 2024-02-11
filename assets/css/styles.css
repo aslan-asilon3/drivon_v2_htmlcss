@@ -273,6 +273,8 @@ img {
 .home__subtitle {
     font-size: var(--h3-font-size);
     margin-bottom: .25rem;
+    color: rgb(255, 145, 255);
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(255, 255, 255, 0.8), 0 0 30px rgba(255, 255, 255, 0.8);
 }
 
 .home__elec {
@@ -298,6 +300,7 @@ img {
     justify-content: center;
     align-items: center;
     column-gap: 4rem;
+    margin-top: 5rem;
     margin-bottom: 2rem;
 }
 

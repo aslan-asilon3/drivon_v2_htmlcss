@@ -20,7 +20,98 @@
     <!--=============== CSS ===============-->
     <link rel="stylesheet" href="assets/css/styles.css">
 
-    <title>Responsive car website - Bedimcode</title>
+    <title>Drivon</title>
+
+
+
+    <style>
+
+    main#carousel {
+  grid-row: 1 / 2;
+  grid-column: 1 / 8;
+  width: 100vw;
+  height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  transform-style: preserve-3d;
+  perspective: 600px;
+  --items: 5;
+  --middle: 3;
+  --position: 1;
+  pointer-events: none;
+}
+
+div.item {
+  position: absolute;
+  width: 300px;
+  height: 400px;
+  --r: calc(var(--position) - var(--offset));
+  --abs: max(calc(var(--r) * -1), var(--r));
+  transition: all 0.25s linear;
+  transform: rotateY(calc(-10deg * var(--r)))
+    translateX(calc(-300px * var(--r)));
+  z-index: calc((var(--position) - var(--abs)));
+}
+
+div.item:nth-of-type(1) {
+  --offset: 1;
+}
+div.item:nth-of-type(2) {
+  --offset: 2;
+}
+div.item:nth-of-type(3) {
+  --offset: 3;
+}
+div.item:nth-of-type(4) {
+  --offset: 4;
+}
+div.item:nth-of-type(5) {
+  --offset: 5;
+}
+
+input:nth-of-type(1) {
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
+}
+input:nth-of-type(1):checked ~ main#carousel {
+  --position: 1;
+}
+
+input:nth-of-type(2) {
+  grid-column: 3 / 4;
+  grid-row: 2 / 3;
+}
+input:nth-of-type(2):checked ~ main#carousel {
+  --position: 2;
+}
+
+input:nth-of-type(3) {
+  grid-column: 4 /5;
+  grid-row: 2 / 3;
+}
+input:nth-of-type(3):checked ~ main#carousel {
+  --position: 3;
+}
+
+input:nth-of-type(4) {
+  grid-column: 5 / 6;
+  grid-row: 2 / 3;
+}
+input:nth-of-type(4):checked ~ main#carousel {
+  --position: 4;
+}
+
+input:nth-of-type(5) {
+  grid-column: 6 / 7;
+  grid-row: 2 / 3;
+}
+input:nth-of-type(5):checked ~ main#carousel {
+  --position: 5;
+}
+
+    </style> 
 </head>
 
 <body>
@@ -98,29 +189,48 @@
             <div class="shape shape__big"></div>
             <div class="shape shape__small"></div>
 
-            <div class="home__container container grid">
-                <div class="home__data">
-                    <h1 class="home__title">
-                        Choose The Best Car
-                    </h1>
 
-                    <h2 class="home__subtitle">
-                        Porsche Mission E
+            <div class="home__container " style="text-align:center;margin-bottom:16px;">
+
+
+                <div class="home__data">
+
+                    <h1 class="home__title">
+                        <i class="ri-flashlight-fill"></i> Choose The Best 5 Cars
+                    </h1>
+                    
+                    <h2 class="home__subtitle" id="carModel">
+                        
                     </h2>
 
-                    <h3 class="home__elec">
-                        <i class="ri-flashlight-fill"></i> Electric car
-                    </h3>
+
+
                 </div>
 
-                <img src="assets/img/home.png" alt="" class="home__img">
+
+                        <input type="radio" name="position" value="black-Porsche-Panamera"  onchange="updateCarModel()"  checked />
+                        <input type="radio" name="position" value="Porsche-718-Cayman"  onchange="updateCarModel()" />
+                        <input type="radio" name="position" value="Audi-e-tron-sportback"  onchange="updateCarModel()" />
+                        <input type="radio" name="position" value="red-Tesla-Model-S"  onchange="updateCarModel()" />
+                        <input type="radio" name="position" value="Tesla-Model-S"  onchange="updateCarModel()" />
+                        <main id="carousel">
+                            <div class="item"><img src="assets/img/featured5.png" alt="" class="about__img"></div>
+                            <div class="item"><img src="assets/img/featured4.png" alt="" class="about__img"></div>
+                            <div class="item"><img src="assets/img/featured3.png" alt="" class="about__img"></div>
+                            <div class="item"><img src="assets/img/featured2.png" alt="" class="about__img"></div>
+                            <div class="item"><img src="assets/img/featured1.png" alt="" class="about__img"></div>
+                        <main>
+
+
+
+
 
                 <div class="home__car">
                     <div class="home__car-data">
                         <div class="home__car-icon">
                             <i class="ri-temp-cold-line"></i>
                         </div>
-                        <h2 class="home__car-number">24°</h2>
+                        <h2 class="home__car-number" id="carTemperature"></h2>
                         <h3 class="home__car-name">TEMPERATURE</h3>
                     </div>
 
@@ -128,7 +238,7 @@
                         <div class="home__car-icon">
                             <i class="ri-dashboard-3-line"></i>
                         </div>
-                        <h2 class="home__car-number">873</h2>
+                        <h2 class="home__car-number"  id="carMileage"></h2>
                         <h3 class="home__car-name">MILEAGE</h3>
                     </div>
 
@@ -136,13 +246,12 @@
                         <div class="home__car-icon">
                             <i class="ri-flashlight-fill"></i>
                         </div>
-                        <h2 class="home__car-number">94%</h2>
+                        <h2 class="home__car-number" id="carBatery"></h2>
                         <h3 class="home__car-name">BATTERY</h3>
                     </div>
                 </div>
 
-                <a href="#" class="home__button">START</a>
-            </div>
+            </main>
         </section>
 
         <!--==================== ABOUT ====================-->
@@ -623,6 +732,61 @@
 
     <!--=============== MAIN JS ===============-->
     <script src="assets/js/main.js"></script>
+
+
+        <script>
+        function updateCarModel() {
+            // Get the selected radio button value
+            var selectedValue = document.querySelector('input[name="position"]:checked').value;
+
+            // Get the element to update
+            var carModelElement = document.getElementById('carModel');
+            var carModelTemperature = document.getElementById('carTemperature');
+            var carModelMileage = document.getElementById('carMileage');
+            var carModelBatery = document.getElementById('carBatery');
+
+            // Update the text content based on the selected value
+            switch (selectedValue) {
+                case 'black-Porsche-Panamera':
+                    carModelElement.textContent = 'black Porsche Panamera';
+                    carModelTemperature.textContent = '20°';
+                    carModelMileage.textContent = '873';
+                    carModelBatery.textContent = '94%';
+                    break;
+                case 'Porsche-718-Cayman':
+                    carModelElement.textContent = 'Porsche 718 Cayman';
+                    carModelTemperature.textContent = '23°';
+                    carModelMileage.textContent = '900';
+                    carModelBatery.textContent = '96%';
+                    break;
+                case 'Audi-e-tron-sportback':
+                    carModelElement.textContent = 'Audi e-tron sportback';
+                    carModelTemperature.textContent = '21°';
+                    carModelMileage.textContent = '850';
+                    carModelBatery.textContent = '98%';
+                    break;
+                case 'red-Tesla-Model-S':
+                    carModelElement.textContent = 'red Tesla Model S';
+                    carModelTemperature.textContent = '19°';
+                    carModelMileage.textContent = '950';
+                    carModelBatery.textContent = '97%';
+                    break;
+                case 'Tesla-Model-S':
+                    carModelElement.textContent = 'Tesla Model S';
+                    carModelTemperature.textContent = '24°';
+                    carModelMileage.textContent = '780';
+                    carModelBatery.textContent = '99%';
+                    break;
+                default:
+                    carModelElement.textContent = 'Select a car model';
+                    break;
+            }
+
+
+
+        }
+    </script>
+
 </body>
 
 </html>
