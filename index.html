@@ -23,95 +23,6 @@
     <title>Drivon</title>
 
 
-
-    <style>
-
-    main#carousel {
-  grid-row: 1 / 2;
-  grid-column: 1 / 8;
-  width: 100vw;
-  height: 500px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  transform-style: preserve-3d;
-  perspective: 600px;
-  --items: 5;
-  --middle: 3;
-  --position: 1;
-  pointer-events: none;
-}
-
-div.item {
-  position: absolute;
-  width: 300px;
-  height: 400px;
-  --r: calc(var(--position) - var(--offset));
-  --abs: max(calc(var(--r) * -1), var(--r));
-  transition: all 0.25s linear;
-  transform: rotateY(calc(-10deg * var(--r)))
-    translateX(calc(-300px * var(--r)));
-  z-index: calc((var(--position) - var(--abs)));
-}
-
-div.item:nth-of-type(1) {
-  --offset: 1;
-}
-div.item:nth-of-type(2) {
-  --offset: 2;
-}
-div.item:nth-of-type(3) {
-  --offset: 3;
-}
-div.item:nth-of-type(4) {
-  --offset: 4;
-}
-div.item:nth-of-type(5) {
-  --offset: 5;
-}
-
-input:nth-of-type(1) {
-  grid-column: 2 / 3;
-  grid-row: 2 / 3;
-}
-input:nth-of-type(1):checked ~ main#carousel {
-  --position: 1;
-}
-
-input:nth-of-type(2) {
-  grid-column: 3 / 4;
-  grid-row: 2 / 3;
-}
-input:nth-of-type(2):checked ~ main#carousel {
-  --position: 2;
-}
-
-input:nth-of-type(3) {
-  grid-column: 4 /5;
-  grid-row: 2 / 3;
-}
-input:nth-of-type(3):checked ~ main#carousel {
-  --position: 3;
-}
-
-input:nth-of-type(4) {
-  grid-column: 5 / 6;
-  grid-row: 2 / 3;
-}
-input:nth-of-type(4):checked ~ main#carousel {
-  --position: 4;
-}
-
-input:nth-of-type(5) {
-  grid-column: 6 / 7;
-  grid-row: 2 / 3;
-}
-input:nth-of-type(5):checked ~ main#carousel {
-  --position: 5;
-}
-
-    </style> 
 </head>
 
 <body>
@@ -133,7 +44,7 @@ input:nth-of-type(5):checked ~ main#carousel {
                         <a href="#about" class="nav__link">About</a>
                     </li>
                     <li class="nav__item">
-                        <a href="#popular" class="nav__link">Car</a>
+                        <a href="car.html" class="nav__link">Car</a>
                     </li>
                     <li class="nav__item">
                         <a href="#popular" class="nav__link">Popular</a>
@@ -143,9 +54,11 @@ input:nth-of-type(5):checked ~ main#carousel {
                     </li>
 
                     <div class="nav__link">
-                        <div class="d-flex align-items-center">
-                            3 <span class="fas fa-shopping-cart"></span> 
-                        </div>
+                        <a href="cart.html">
+                            <div class="d-flex align-items-center"  style=" color:white;">
+                                3 <span class="fas fa-shopping-cart"></span> 
+                            </div>
+                        </a>
                     </div>
                     
                     <li class="nav__item">
@@ -736,59 +649,6 @@ input:nth-of-type(5):checked ~ main#carousel {
     <!--=============== MAIN JS ===============-->
     <script src="assets/js/main.js"></script>
 
-
-        <script>
-        function updateCarModel() {
-            // Get the selected radio button value
-            var selectedValue = document.querySelector('input[name="position"]:checked').value;
-
-            // Get the element to update
-            var carModelElement = document.getElementById('carModel');
-            var carModelTemperature = document.getElementById('carTemperature');
-            var carModelMileage = document.getElementById('carMileage');
-            var carModelBatery = document.getElementById('carBatery');
-
-            // Update the text content based on the selected value
-            switch (selectedValue) {
-                case 'black-Porsche-Panamera':
-                    carModelElement.textContent = 'black Porsche Panamera';
-                    carModelTemperature.textContent = '20°';
-                    carModelMileage.textContent = '873';
-                    carModelBatery.textContent = '94%';
-                    break;
-                case 'Porsche-718-Cayman':
-                    carModelElement.textContent = 'Porsche 718 Cayman';
-                    carModelTemperature.textContent = '23°';
-                    carModelMileage.textContent = '900';
-                    carModelBatery.textContent = '96%';
-                    break;
-                case 'Audi-e-tron-sportback':
-                    carModelElement.textContent = 'Audi e-tron sportback';
-                    carModelTemperature.textContent = '21°';
-                    carModelMileage.textContent = '850';
-                    carModelBatery.textContent = '98%';
-                    break;
-                case 'red-Tesla-Model-S':
-                    carModelElement.textContent = 'red Tesla Model S';
-                    carModelTemperature.textContent = '19°';
-                    carModelMileage.textContent = '950';
-                    carModelBatery.textContent = '97%';
-                    break;
-                case 'Tesla-Model-S':
-                    carModelElement.textContent = 'Tesla Model S';
-                    carModelTemperature.textContent = '24°';
-                    carModelMileage.textContent = '780';
-                    carModelBatery.textContent = '99%';
-                    break;
-                default:
-                    carModelElement.textContent = 'Select a car model';
-                    break;
-            }
-
-
-
-        }
-    </script>
 
 </body>
 

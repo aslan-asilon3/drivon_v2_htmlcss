@@ -139,3 +139,64 @@ let menu = document.querySelector('.menu');
 profile.onclick = function() {
     menu.classList.toggle('active');
 }
+// End Photo Profile=======================================
+
+
+
+/* ======= Image Caroseul in landing page============================= */
+
+
+function updateCarModel() {
+    // Get the selected radio button value
+    var selectedValue = document.querySelector('input[name="position"]:checked').value;
+
+    // Get the element to update
+    var carModelElement = document.getElementById('carModel');
+    var carModelTemperature = document.getElementById('carTemperature');
+    var carModelMileage = document.getElementById('carMileage');
+    var carModelBatery = document.getElementById('carBatery');
+
+    // Update the text content based on the selected value
+    switch (selectedValue) {
+        case 'black-Porsche-Panamera':
+            carModelElement.textContent = 'black Porsche Panamera';
+            carModelTemperature.textContent = '20°';
+            carModelMileage.textContent = '873';
+            carModelBatery.textContent = '94%';
+            break;
+        case 'Porsche-718-Cayman':
+            carModelElement.textContent = 'Porsche 718 Cayman';
+            carModelTemperature.textContent = '23°';
+            carModelMileage.textContent = '900';
+            carModelBatery.textContent = '96%';
+            break;
+        case 'Audi-e-tron-sportback':
+            carModelElement.textContent = 'Audi e-tron sportback';
+            carModelTemperature.textContent = '21°';
+            carModelMileage.textContent = '850';
+            carModelBatery.textContent = '98%';
+            break;
+        case 'red-Tesla-Model-S':
+            carModelElement.textContent = 'red Tesla Model S';
+            carModelTemperature.textContent = '19°';
+            carModelMileage.textContent = '950';
+            carModelBatery.textContent = '97%';
+            break;
+        case 'Tesla-Model-S':
+            carModelElement.textContent = 'Tesla Model S';
+            carModelTemperature.textContent = '24°';
+            carModelMileage.textContent = '780';
+            carModelBatery.textContent = '99%';
+            break;
+        default:
+            carModelElement.textContent = 'Select a car model';
+            break;
+    }
+
+
+
+}
+
+
+
+/* =======End Image Caroseul in landing page============================= */
